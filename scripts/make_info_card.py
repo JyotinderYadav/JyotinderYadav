@@ -1,0 +1,214 @@
+from pathlib import Path
+
+OUTPUT_FILE = Path("info-card.svg")
+
+WIDTH = 490
+HEIGHT = 300
+
+svg = f'''<svg xmlns="http://www.w3.org/2000/svg"
+width="{WIDTH}"
+height="{HEIGHT}"
+viewBox="0 0 {WIDTH} {HEIGHT}">
+
+<style>
+.card-line {{
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}}
+
+@keyframes fadeIn {{
+    from {{
+        opacity: 0;
+        transform: translateX(-10px);
+    }}
+    to {{
+        opacity: 1;
+        transform: translateX(0);
+    }}
+}}
+
+.title {{
+    font-weight: bold;
+}}
+</style>
+
+<!-- Background -->
+<rect
+    width="100%"
+    height="100%"
+    rx="12"
+    fill="#0d1117"
+    stroke="#30363d"
+    stroke-width="1"
+/>
+
+<!-- Terminal header -->
+<circle cx="20" cy="20" r="5" fill="#ff5f56"/>
+<circle cx="38" cy="20" r="5" fill="#ffbd2e"/>
+<circle cx="56" cy="20" r="5" fill="#27c93f"/>
+
+<text
+    x="75"
+    y="25"
+    fill="#8b949e"
+    font-family="monospace"
+    font-size="12">
+    jyotinder@github: ~
+</text>
+
+<!-- Title -->
+<text
+    x="25"
+    y="65"
+    fill="#f0f6fc"
+    font-family="monospace"
+    font-size="18"
+    class="title">
+    Jyotinder Yadav
+</text>
+
+<!-- Lines -->
+
+<text
+    x="25"
+    y="100"
+    fill="#58a6ff"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:0.2s">
+    Role
+</text>
+
+<text
+    x="135"
+    y="100"
+    fill="#c9d1d9"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:0.2s">
+    CSE Student
+</text>
+
+
+<text
+    x="25"
+    y="130"
+    fill="#58a6ff"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:0.4s">
+    Focus
+</text>
+
+<text
+    x="135"
+    y="130"
+    fill="#c9d1d9"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:0.4s">
+    Full Stack Development
+</text>
+
+
+<text
+    x="25"
+    y="160"
+    fill="#58a6ff"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:0.6s">
+    Stack
+</text>
+
+<text
+    x="135"
+    y="160"
+    fill="#c9d1d9"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:0.6s">
+    React • Node • Express • MongoDB
+</text>
+
+
+<text
+    x="25"
+    y="190"
+    fill="#58a6ff"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:0.8s">
+    Languages
+</text>
+
+<text
+    x="135"
+    y="190"
+    fill="#c9d1d9"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:0.8s">
+    C++ • JavaScript • Python
+</text>
+
+
+<text
+    x="25"
+    y="220"
+    fill="#58a6ff"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:1.0s">
+    Interests
+</text>
+
+<text
+    x="135"
+    y="220"
+    fill="#c9d1d9"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:1.0s">
+    DSA • Web Development • AI
+</text>
+
+
+<text
+    x="25"
+    y="260"
+    fill="#3fb950"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:1.2s">
+    Status
+</text>
+
+<text
+    x="135"
+    y="260"
+    fill="#3fb950"
+    font-family="monospace"
+    font-size="12"
+    class="card-line"
+    style="animation-delay:1.2s">
+    ● Open to Opportunities
+</text>
+
+</svg>
+'''
+
+OUTPUT_FILE.write_text(svg, encoding="utf-8")
+
+print(f"Created {OUTPUT_FILE}")
