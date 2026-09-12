@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+source-photo.png
+source-prepped.png
+source-no-bg.png
